@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load common head content, including the favicon link -->
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>NASA APOD</title>
+</head>
+<body>
+    <!-- include navbar from partials -->
+    {% include "./partials/nav.html" ignore missing with context %}
+    
+    <h1>Nasa Astronomy picture of the day</h1>
+
+    <figure class="figure">
+        <img src="{{ data.url }}" class="figure-img img-fluid rounded" alt="Nasa Astronomy picture of the day">
+        <figcaption class="figure_caption">{{data.explanation}}</figcaption>
+    </figure>
+
+    <!-- Load common CSS and JS -->
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+</html>
